@@ -9,9 +9,24 @@ var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/exampleDb");
 var nameSchema = new mongoose.Schema({
+	passportNo: String,
     firstName: String,
-    lastName: String
+    lastName: String,
+	nationality: String,
+	dateOfBirth: Date, 
+	placeOfBirth: String,
+	//dateOfIssue: Date,
+	//dateOfExpirty: Date,
+	flightNo: String,
+	depAirport: String,
+	arrAirport: String,
+	//depTimeDate: Date,
+	//arrTimeDate: Date, 
+	seatNo: String,
+	baggage: Number,
+	fare: Number
 });
+
 var User = mongoose.model("User", nameSchema);
 
 app.get("/", (req, res) => {
