@@ -7,25 +7,39 @@
     <body>
         <h1>Into to Node and MongoDB</h1>
         <form method="post" action="/addname">
-            <label>Enter Your Name</label><br>
-			<input type="text" name="passportNo" placeholder="Enter passportNo ..." required>
-            <input type="text" name="firstName" placeholder="Enter first name..." required>
-            <input type="text" name="lastName" placeholder="Enter last name..." required>
-			<input type="text" name="nationality" placeholder="Enter nationality..." required>
-			<input type="text" name="dateOfBirth" placeholder="Enter dob..." required>
-			<input type="text" name="placeOfBirth" placeholder="Enter placeOfBirth..." required>
-			<input type="text" name="dateOfIssue" placeholder="Enter date of issue..." required>
-			<input type="text" name="dateOfExpiry" placeholder="Enter first name..." required>
-			<input type="text" name="flightNo" placeholder="Enter flightNo name..." required>
-			<input type="text" name="depTimeDate" placeholder="Enter deptimedate name..." required>
-			<input type="text" name="arrTimeDate" placeholder="Enter arrTimeDate name..." required>
-			<input type="text" name="seatNo" placeholder="Enter seatno name..." required>
-			<input type="text" name="baggage" placeholder="Enter no baggage name..." required>
-			<input type="text" name="fare" placeholder="Enter fare name..." required>
+            <label>Passport Number</label><br>
+			<input type="text" name="passportNo" required><br><br>
+            <label>First Name:</label><br>
+			<input type="text" name="firstName" required><br><br>
+            <label>Surname:</label><br>
+			<input type="text" name="lastName" required><br><br>
+			<label>Nationality:</label><br>
+			<input type="text" name="nationality" required><br><br>
+			<label>Date Of Birth:</label><br>
+			<input type="text" name="dateOfBirth" placeholder="E.g. 2017-10-01T00:00:00" required><br>
+			
+			<label>Place Of Birth:</label><br>
+			<input type="text" name="placeOfBirth" required><br><br>
+			<label>Passport Date of Issue:</label><br>
+			<input type="text" name="dateOfIssue" placeholder="E.g. 2017-10-01T00:00:00" required><br><br>
+			<label>Passport Date of Expiry:</label><br>
+			<input type="text" name="dateOfExpiry" placeholder="E.g. 2017-10-01T00:00:00" required><br><br>
+			<label>Passport Flight No:</label><br>
+			<input type="text" name="flightNo" required><br><br>
+			<label>Departure Detils:</label><br>
+			<input type="text" name="depTimeDate" placeholder="E.g. 2017-10-01T00:00:00" required><br><br>
+			<label>Arrival Details:</label><br>
+			<input type="text" name="arrTimeDate" placeholder="E.g. 2017-10-01T00:00:00" required><br><br>
+			<label>Seat Number:</label><br>
+			<input type="text" name="seatNo" required><br><br>
+			<label>Quanity of Baggage:</label><br>
+			<input type="text" name="baggage" required><br><br>
+			<label>Fare:</label><br>
+			<input type="text" name="fare" required><br><br>
             <input type="submit" value="Add Name">
-			<input type="date" id="mydate">
-			<input type="time">
-			<input type="button" onclick="var d = document.getElementById('mydate.value'); alert(d);">
-        </form>
+			<input type="date" name="mydate">
+			<input type="time" name="time">
+			<input type="button" onclick="window.alert(mydate.value+'T'+time.value+':00Z');">
+		</form>	
     </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+</head>
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<body>
+	  <table class="flightDetails">
+  <% for(var i=0; i<flightDetails.length; i++) {%>
+    <tr class="flightDetails">
+      <td><%= flightDetails[i].passportNo %></td>
+      <td><%= flightDetails[i].firstName %></td>
+	  <td><%= flightDetails[i].lastName %></td>
+	  <td><%= flightDetails[i].depDate %></td>
+	  <td><%= flightDetails[i].depTime %></td>
+	  <td><%= flightDetails[i].arrDate %></td>
+	  <td><%= flightDetails[i].arrTime %></td>
+    </tr>
+  <% } %>
+  
+  
+      <form method="post" action="/flightDetails">
+            <label>Passport Number</label>
+			<input type="text" name="passportNo" required><br>
+            <label>First Name:</label>
+			<input type="text" name="firstName" required><br>
+            <label>Surname:</label>
+			<input type="text" name="lastName" required><br>
+			<label>Nationality:</label>
+			<input type="text" name="nationality" required><br>
+			<label>Date Of Birth:</label>
+			<input type="date" name="dateOfBirth" required><br>
+			
+			<label>Place Of Birth:</label>
+			<input type="text" name="placeOfBirth" required><br>
+			<label>Passport Date of Issue:</label>
+			<input type="date" name="dateOfIssue" required><br>
+			<label>Passport Date of Expiry:</label>
+			<input type="date" name="dateOfExpiry"  required><br>
+			<label>Passport Flight No:</label>
+			<input type="text" name="flightNo" required><br>
+			<label>Departure Detils:</label>
+			<input type="date" name="depDate" required><br>
+			<input type="time" name="depTime" required><br>
+			<label>Arrival Details:</label>
+			<input type="date" name="arrDate" required><br>
+			<input type="time" name="arrTime" required><br>
+			<label>Seat Number:</label>
+			<input type="text" name="seatNo" required><br>
+			<label>Quanity of Baggage:</label>
+			<input type="text" name="baggage" required><br>
+			<label>Fare:</label>
+			<input type="text" name="fare" required><br>
+            <input type="submit">
+			
+		</form>	
+</body>
+</html>
