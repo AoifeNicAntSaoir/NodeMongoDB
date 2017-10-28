@@ -8,55 +8,107 @@
 table, th, td {
     border: 1px solid black;
 }
+
+#table1 table, #table1 th, #table1 td {
+	border: 0px;
+	}
 </style>
 <body>
 	  <table class="flightDetails">
+		  <tr>
+    <th>Passport Number</th>
+    <th>First Name</th> 
+    <th>Last Name</th>
+	<th>Depart Airport</th>
+	<th>Depart Date</th>
+	<th>Depart Time</th>
+	<th>Arrival Airport</th>
+	<th>Arrival Date</th>
+	<th>Arrival Time</th>
+	<th>Fare €</th>
+  </tr>
   <% for(var i=0; i<flightDetails.length; i++) {%>
     <tr class="flightDetails">
       <td><%= flightDetails[i].passportNo %></td>
       <td><%= flightDetails[i].firstName %></td>
 	  <td><%= flightDetails[i].lastName %></td>
+	  <td><%= flightDetails[i].depAirport %></td>
 	  <td><%= flightDetails[i].depDate %></td>
 	  <td><%= flightDetails[i].depTime %></td>
+	  <td><%= flightDetails[i].arrAirport %></td>
 	  <td><%= flightDetails[i].arrDate %></td>
 	  <td><%= flightDetails[i].arrTime %></td>
+	  <td><%= flightDetails[i].fare %></td>
     </tr>
   <% } %>
   
   
       <form method="post" action="/flightDetails">
-            <label>Passport Number</label>
-			<input type="text" name="passportNo" required><br>
-            <label>First Name:</label>
-			<input type="text" name="firstName" required><br>
-            <label>Surname:</label>
-			<input type="text" name="lastName" required><br>
-			<label>Nationality:</label>
-			<input type="text" name="nationality" required><br>
-			<label>Date Of Birth:</label>
-			<input type="date" name="dateOfBirth" required><br>
-			
-			<label>Place Of Birth:</label>
-			<input type="text" name="placeOfBirth" required><br>
-			<label>Passport Date of Issue:</label>
-			<input type="date" name="dateOfIssue" required><br>
-			<label>Passport Date of Expiry:</label>
-			<input type="date" name="dateOfExpiry"  required><br>
-			<label>Passport Flight No:</label>
-			<input type="text" name="flightNo" required><br>
-			<label>Departure Detils:</label>
-			<input type="date" name="depDate" required><br>
-			<input type="time" name="depTime" required><br>
-			<label>Arrival Details:</label>
-			<input type="date" name="arrDate" required><br>
-			<input type="time" name="arrTime" required><br>
-			<label>Seat Number:</label>
-			<input type="text" name="seatNo" required><br>
-			<label>Quanity of Baggage:</label>
-			<input type="text" name="baggage" required><br>
-			<label>Fare:</label>
-			<input type="text" name="fare" required><br>
-            <input type="submit">
+	   <table id="table1"; cellspacing="5px" cellpadding="5%"; align="center" style="border: none;">
+	   <tr>
+            <td>	<label>Passport Number</label>	</td>
+			<td>	<input type="text" name="passportNo" required>	</td>
+		</tr>
+        <tr>
+			<td>	<label>First Name:</label>	</td>
+			<td>	<input type="text" name="firstName" required>	</td>
+		</tr>
+		<tr>
+            <td>	<label>Surname:</label>	</td>
+			<td>	<input type="text" name="lastName" required></td>
+		</tr>
+		<tr>
+			<td>	<label>Nationality:</label> 	</td>
+			<td>	<input type="text" name="nationality" required> 	</td>
+		</tr>
+		<tr>
+			<td>	<label>Date Of Birth:</label> 	</td>
+			<td>	<input type="date" name="dateOfBirth" required> 	</td>
+		</tr>
+		<tr>
+			<td>	<label>Place Of Birth:</label>	</td>
+			<td>	<input type="text" name="placeOfBirth" required>	</td>
+		</tr>
+		<tr>
+			<td>	<label>Passport Date of Issue:</label> 	</td>
+			<td>	<input type="date" name="dateOfIssue" required> 	</td>
+		</tr>
+		<tr>
+			<td>	<label>Passport Date of Expiry:</label> </td>
+			<td>	<input type="date" name="dateOfExpiry"  required> </td>
+		</tr>
+		<tr>
+			<td> 	<label>Passport Flight No:</label> </td>
+			<td> 	<input type="text" name="flightNo" required> </td>
+		</tr>
+		<tr>
+			<td>	<label>Departure Detils:</label>	</td>
+			<td>	<input type="text" name="depAirport" placeholder="Departing Airport" required> 	</td>
+			<td>	<input type="date" name="depDate" required> </td>
+			<td>	<input type="time" name="depTime" required> </td>
+		</tr>
+		<tr>
+			<td>	<label>Arrival Details:</label> </td>
+			<td>	<input type="text" name="arrAirport" placeholder="Arriving Airport" required> 	</td>
+			<td>	<input type="date" name="arrDate" required> 	</td>
+			<td>	<input type="time" name="arrTime" required> 	</td>
+		</tr>
+		<tr>
+			<td>	<label>Seat Number:</label> 	</td>
+			<td> 	<input type="text" name="seatNo" required> </td>
+		</tr>
+		<tr>
+			<td>	<label>Quanity of Baggage:</label> </td>
+			<td>	<input type="text" name="baggage" required> </td>
+		</tr>
+		<tr>
+			<td>	<label>Fare:</label> </td>
+			<td>	<input type="text" name="fare" required> </td>
+		</tr>
+		<tr>
+            <td><input type="submit"></td>
+		</tr>
+		</table>
 			
 		</form>	
 </body>
