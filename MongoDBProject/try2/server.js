@@ -32,12 +32,12 @@ app.post('/flightDetails', (req, res) => {
     res.redirect('/')
   })
 })
-/*
+
 app.put('/flightDetails', (req, res) => {
-  .findOneAndUpdate({name: 'Yoda'}, {
+  db.collection('flightDetails')
+  .findOneAndUpdate({passportNo: 'Yoda'}, {
     $set: {
-      name: req.body.name,
-      quote: req.body.quote
+      passportNo: req.body.passportNo
     }
   }, {
     sort: {_id: -1},
@@ -48,13 +48,9 @@ app.put('/flightDetails', (req, res) => {
   })
 })
 
-
-
 app.delete('/flightDetails', (req, res) => {
-  db.collection('flightDetails').findOneAndDelete({name: req.body.name}, (err, result) => {
+  db.collection('flightDetails').findOneAndDelete({passportNo: req.body.passportNo}, (err, result) => {
     if (err) return res.send(500, err)
     res.send('A darth vadar quote got deleted')
-  db.collection('flightDetails')
   })
 })
-*/

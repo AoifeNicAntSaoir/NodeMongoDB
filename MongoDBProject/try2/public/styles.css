@@ -1,0 +1,15 @@
+html {
+  font-size: 20px;
+}
+
+.flightDetails {
+  margin-top: 0.5em;
+	}
+
+	.flightDetails > span:first-child {
+	  font-weight: bold
+	}
+
+	.flightDetails > span:first-child:after {
+	  content:':'
+}
