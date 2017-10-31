@@ -110,6 +110,20 @@ table, th, td {
 		
 		<div>
     <h2>Update specified field</h2>
+	Enter passportNo to update: <input type="text" id="fieldToUpdate" required>
+	<select id="keyField">
+		<option value="passportNo">Passport Number</option>
+		<option value="firstName">First Name</option>
+		<option value="lastName">Last Name</option>
+		<option value="depAirport">Departing Airport</option>
+		<option value="depDate">Departing Date</option>
+		<option value="depTime">Departing Time</option>
+		<option value="arrAirport">Arrival Airport</option>
+		<option value="arrDate">Arrival Date</option>
+		<option value="arrTime">Arrival Time</option>
+		<option value="fare">Fare</option>
+	</select>
+	<input type="text" id="valueField" required>
     <button id="update"> Darth Vadar invades! </button>
   </div>
 

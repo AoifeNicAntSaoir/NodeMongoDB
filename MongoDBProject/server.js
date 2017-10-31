@@ -51,6 +51,6 @@ app.put('/flightDetails', (req, res) => {
 app.delete('/flightDetails', (req, res) => {
   db.collection('flightDetails').findOneAndDelete({passportNo: req.body.passportNo}, (err, result) => {
     if (err) return res.send(500, err)
-    res.send('A darth vadar quote got deleted')
+    res.send('A customers flight details were deleted')
   })
 })

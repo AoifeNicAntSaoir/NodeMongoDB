@@ -2,13 +2,17 @@
 var update = document.getElementById('update')
 var del = document.getElementById('delete')
 var passportDel = document.getElementById('nameToDelete')
+var key
+var valueF
 
 update.addEventListener('click', function () {
+	key = document.getElementById('keyField').value
+	valueF = document.getElementById('valueField')
   fetch('flightDetails', {
     method: 'put',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      'passportNo': 'Darth Vader'
+      key: valueF
     })
   })
   .then(response => {
@@ -20,7 +24,7 @@ update.addEventListener('click', function () {
 })
 
 del.addEventListener('click', function () {
-	window.alert(passportDel.value)	
+
   fetch('flightDetails', {
     method: 'delete',
     headers: {
@@ -30,7 +34,7 @@ del.addEventListener('click', function () {
       'passportNo': passportDel.value
     })
   }).then(function (response) {
-	  window.alert("delete")
+	  window.alert("Deleted passport number: " + passportDel.value)
     window.location.reload()
 	
   })
