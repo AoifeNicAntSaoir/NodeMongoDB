@@ -1,18 +1,22 @@
 /* globals fetch */
 var update = document.getElementById('update')
+var newUp
+var fieldToUpdate = document.getElementById('oldNo')
+var fieldUpdatedTo = document.getElementById('newNo')
 var del = document.getElementById('delete')
 var passportDel = document.getElementById('nameToDelete')
-var key
-var valueF
+
 
 update.addEventListener('click', function () {
-	key = document.getElementById('keyField').value
-	valueF = document.getElementById('valueField')
+	fieldToUpdate = document.getElementById('oldNo').value
+	fieldUpdatedTo = document.getElementById('newNo').value
+	alert(fieldToUpdate)
+	alert(fieldUpdatedTo)
   fetch('flightDetails', {
     method: 'put',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
-      key: valueF
+      'passportNo': fieldUpdatedTo
     })
   })
   .then(response => {
@@ -20,6 +24,7 @@ update.addEventListener('click', function () {
   })
   .then(data => {
     console.log(data)
+	window.location.reload()
   })
 })
 

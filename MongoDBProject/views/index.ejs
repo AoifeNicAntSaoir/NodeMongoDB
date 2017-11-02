@@ -14,41 +14,48 @@ table, th, td {
 	}
 </style>
 <body>
-	  <table class="flightDetails">
-		  <tr>
-    <th>Passport Number</th>
-    <th>First Name</th> 
-    <th>Last Name</th>
-	<th>Depart Airport</th>
-	<th>Depart Date</th>
-	<th>Depart Time</th>
-	<th>Arrival Airport</th>
-	<th>Arrival Date</th>
-	<th>Arrival Time</th>
-	<th>Fare €</th>
-  </tr>
-  <% for(var i=0; i<flightDetails.length; i++) {%>
-    <tr class="flightDetails">
-      <td><%= flightDetails[i].passportNo %></td>
-      <td><%= flightDetails[i].firstName %></td>
-	  <td><%= flightDetails[i].lastName %></td>
-	  <td><%= flightDetails[i].depAirport %></td>
-	  <td><%= flightDetails[i].depDate %></td>
-	  <td><%= flightDetails[i].depTime %></td>
-	  <td><%= flightDetails[i].arrAirport %></td>
-	  <td><%= flightDetails[i].arrDate %></td>
-	  <td><%= flightDetails[i].arrTime %></td>
-	  <td><%= flightDetails[i].fare %></td>
-    </tr>
-  <% } %>
-  
+	<h1>Reading flight Details</h1>
+	 <table class="flightDetails">
+		<tr>
+			<th>Passport Number</th>
+			<th>First Name</th> 
+			<th>Last Name</th>
+			<th>Depart Airport</th>
+			<th>Depart Date</th>
+			<th>Depart Time</th>
+			<th>Arrival Airport</th>
+			<th>Arrival Date</th>
+			<th>Arrival Time</th>
+			<th>Fare €</th>
+		</tr>
+		<!--Goes through array from get method in server.js and puts each one in the table !-->
+	  <% for(var i=0; i<flightDetails.length; i++) {%>
+		<tr class="flightDetails">
+		  <td><%= flightDetails[i].passportNo %></td>
+		  <td><%= flightDetails[i].firstName %></td>
+		  <td><%= flightDetails[i].lastName %></td>
+		  <td><%= flightDetails[i].depAirport %></td>
+		  <td><%= flightDetails[i].depDate %></td>
+		  <td><%= flightDetails[i].depTime %></td>
+		  <td><%= flightDetails[i].arrAirport %></td>
+		  <td><%= flightDetails[i].arrDate %></td>
+		  <td><%= flightDetails[i].arrTime %></td>
+		  <td><%= flightDetails[i].fare %></td>
+		</tr>
+	  <% } %>
+		</table>
 
-	<h1>CREATE</h1>
+	<h1>Create new flight details</h1>
       <form method="post" action="/flightDetails">
 	   <table id="table1"; cellspacing="5px" cellpadding="5%"; align="center" style="border: none;">
 	   <tr>
             <td>	<label>Passport Number</label>	</td>
 			<td>	<input type="text" name="passportNo" required>	</td>
+		</tr>
+		</tr> 
+            <td>	<label>First Name:</label>	</td>
+			<td>	<input type="text" name="firstName" required></td>
+		</tr>
 		</tr> 
             <td>	<label>Surname:</label>	</td>
 			<td>	<input type="text" name="lastName" required></td>
@@ -109,24 +116,21 @@ table, th, td {
 		</form>	
 		
 		<div>
+	<!--Enter passport no of document you wish to update
+		Select field you want to update ie. passport no firstName, lastName, depAirport, arrAirport or fare
+		enter update value
+		press update button
+		The event of clicking the button is handled in public/main.js and then passed to /server.js where the document is updated
+	!-->
     <h2>Update specified field</h2>
-	Enter passportNo to update: <input type="text" id="fieldToUpdate" required>
-	<select id="keyField">
-		<option value="passportNo">Passport Number</option>
-		<option value="firstName">First Name</option>
-		<option value="lastName">Last Name</option>
-		<option value="depAirport">Departing Airport</option>
-		<option value="depDate">Departing Date</option>
-		<option value="depTime">Departing Time</option>
-		<option value="arrAirport">Arrival Airport</option>
-		<option value="arrDate">Arrival Date</option>
-		<option value="arrTime">Arrival Time</option>
-		<option value="fare">Fare</option>
-	</select>
-	<input type="text" id="valueField" required>
-    <button id="update"> Darth Vadar invades! </button>
+	Enter passportNo to update: <input type="text" id="oldNo" required>
+	<label>Enter new passportNo</label>
+	<input type="text" id="newNo" required>
+    <button id="update">Update </button>
   </div>
-
+	<!--Delete document by passportNo !
+		The event of clicking the button is handled in public/main.js and then passed to /server.js
+		where the document is then deleted-->
   <div>
     <h2>Delete customer's details by passportNo</h2>
 	<p> Read the table above of all documents to pick a specic passportNo</p>
